@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d8d4bcfd-53da-4bba-a5dd-93d9ea19c7e1" name="GreenRiverDev-Personal" url="http://thezalmanian.greenriverdev.com">
+        <fileTransfer rootFolder="/home/thezalma/public_html" accessType="SFTP" host="thezalmanian.greenriverdev.com" port="18765" sshConfigId="76df6db6-81ad-44d8-b8f7-8d7affd28411" sshConfig="GreenRiverDev-Personal">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

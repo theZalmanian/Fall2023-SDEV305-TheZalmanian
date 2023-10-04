@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="thezalmanian.greenriverdev.com" id="76df6db6-81ad-44d8-b8f7-8d7affd28411" port="18765" customName="GreenRiverDev-Personal" nameFormat="CUSTOM" username="thezalma" useOpenSSHConfig="true">
+        <option name="customName" value="GreenRiverDev-Personal" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>
