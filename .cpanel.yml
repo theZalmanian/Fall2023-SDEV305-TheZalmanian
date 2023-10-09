@@ -2,4 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/thezalma/public_html/
+    - /bin/cp -R index.html $DEPLOYPATH
     - /bin/cp -R * $DEPLOYPATH
