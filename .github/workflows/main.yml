@@ -1,18 +1,19 @@
 on: push
-name: Update Server
+name: Update server
 jobs:
   ci:
-    name: Deploy Action
+    name: Deploy action
     runs-on: ubuntu-latest
     steps:
-      - name: Get Latest Changes
+      - name: Get latest changes
         uses: actions/checkout@v3
       
-      - name: Sync Files
+      - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
+          server-dir: public_html/
           port: 21
