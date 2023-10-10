@@ -28,6 +28,15 @@ nav.navbar {
     color: var(--primary-color) !important;
 }
 
+svg.icon {
+    fill: var(--secondary-color);
+    width: 4rem;
+}
+
+svg.icon:hover {
+    fill: var(--primary-color);
+}
+
 a {
     text-decoration: none;
 }
