@@ -1,6 +1,7 @@
 :root {
     --primary-color: #2B2C28;
     --secondary-color: #6d6e58;
+    --variant-secondary-color: #a5a889;
     --accent-color: #E2D4B7;
 }
 
@@ -39,7 +40,12 @@ button.accordion-button.collapsed {
 }
 
 button.accordion-button:not(.collapsed) {
-    background: var(--primary-color);
+    background: var(--variant-secondary-color);
+    color: var(--primary-color);
+}
+
+button.accordion-button:not(.collapsed) > h4 {
+    font-weight: bold;
 }
 
 a.icon > svg {
