@@ -1,8 +1,37 @@
 :root {
-    --primaryColor: #06143d
+    --primary-color: #2B2C28;
+    --secondary-color: #6d6e58;
+    --accent-color: #E2D4B7;
 }
 
-body {
-    background-color: var(--primaryColor);
-    color: bisque;
+html, body {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+nav.navbar {
+    background: var(--secondary-color);
+    color: var(--accent-color);
+}
+
+.navbar-nav .nav-link {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link.active {
+    background: none;
+    color: var(--primary-color) !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: square;
 }
