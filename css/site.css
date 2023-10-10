@@ -28,13 +28,27 @@ nav.navbar {
     color: var(--primary-color) !important;
 }
 
-svg.icon {
-    fill: var(--secondary-color);
+#personal-info, 
+.accordion-item, 
+.accordion-body > .list-group-flush > li.list-group-item {
+    background: var(--accent-color);
+}
+
+button.accordion-button.collapsed {
+    background: var(--secondary-color);
+}
+
+button.accordion-button:not(.collapsed) {
+    background: var(--primary-color);
+}
+
+a.icon > svg {
+    fill: var(--primary-color);
     width: 4rem;
 }
 
-svg.icon:hover {
-    fill: var(--primary-color);
+a.icon:hover > svg {
+    fill: var(--secondary-color);
 }
 
 a {
