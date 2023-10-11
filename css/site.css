@@ -5,9 +5,8 @@
     --accent-color: #E2D4B7;
 }
 
-html, body {
+body {
     background-color: var(--primary-color);
-    color: var(--accent-color);
 }
 
 nav.navbar {
@@ -48,6 +47,10 @@ button.accordion-button:not(.collapsed) > h4 {
     font-weight: bold;
 }
 
+a.icon {
+    text-decoration: none;
+}
+
 a.icon > svg {
     fill: var(--primary-color);
     width: 4rem;
@@ -57,10 +60,19 @@ a.icon:hover > svg {
     fill: var(--secondary-color);
 }
 
-a {
-    text-decoration: none;
-}
-
 li {
     list-style-type: square;
+}
+
+.accordion-body > .list-group-flush > li.list-group-item a {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.accordion-body > .list-group-flush > li.list-group-item a:hover {
+    color: var(--primary-color);
+}
+
+.list-group-flush > li.list-group-item > p {
+    margin-bottom: .25rem;
 }
