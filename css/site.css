@@ -36,14 +36,13 @@ nav.navbar {
 
 button.accordion-button.collapsed {
     background: var(--secondary-color);
+    font-size: x-large;
 }
 
 button.accordion-button:not(.collapsed) {
     background: var(--variant-secondary-color);
     color: var(--primary-color);
-}
-
-button.accordion-button:not(.collapsed) > h4 {
+    font-size: x-large;
     font-weight: bold;
 }
 
@@ -73,6 +72,6 @@ li {
     color: var(--primary-color);
 }
 
-.list-group-flush > li.list-group-item > p {
+.list-group-flush > li.list-group-item p {
     margin-bottom: .25rem;
 }
