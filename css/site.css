@@ -1,7 +1,7 @@
 :root {
     --primary-color: #2B2C28;
     --secondary-color: #6d6e58;
-    --variant-secondary-color: #a5a889;
+    --secondary-color-variant: #a5a889;
     --accent-color: #E2D4B7;
 }
 
@@ -40,7 +40,7 @@ button.accordion-button.collapsed {
 }
 
 button.accordion-button:not(.collapsed) {
-    background: var(--variant-secondary-color);
+    background: var(--secondary-color-variant);
     color: var(--primary-color);
     font-size: x-large;
     font-weight: bold;
@@ -63,6 +63,10 @@ li {
     list-style-type: square;
 }
 
+.accordion {
+    --bs-accordion-border-color: var(--primary-color);
+}
+
 .accordion-body > .list-group-flush > li.list-group-item a {
     color: var(--secondary-color);
     font-weight: bold;
@@ -74,4 +78,8 @@ li {
 
 .list-group-flush > li.list-group-item p {
     margin-bottom: .25rem;
+}
+
+.list-group-item {
+    border-color: var(--primary-color);
 }
