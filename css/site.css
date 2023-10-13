@@ -1,4 +1,11 @@
 :root {
+    --primary-color: #727370;
+    --secondary-color: #bdbd9f;
+    --secondary-color-variant: #504f4f;
+    --accent-color: #1e1e1e;
+}
+
+[data-bs-theme=dark] {
     --primary-color: #2B2C28;
     --secondary-color: #6d6e58;
     --secondary-color-variant: #a5a889;
