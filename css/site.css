@@ -35,6 +35,16 @@ nav.navbar {
     color: var(--primary-color) !important;
 }
 
+.navbar-nav a#theme-switcher.nav-link > svg {
+    fill: var(--accent-color);
+    transition: fill 0.2s;
+    width: 30px;
+}
+
+.navbar-nav a#theme-switcher.nav-link:hover > svg {
+    fill: var(--primary-color);
+}
+
 #personal-info, 
 .accordion-item, 
 .accordion-body > .list-group-flush > li.list-group-item {
@@ -89,9 +99,4 @@ li {
 
 .list-group-item {
     border-color: var(--primary-color);
-}
-
-button#theme-switcher > svg {
-    fill: var(--accent-color);
-    width: 30px;
 }
