@@ -49,6 +49,14 @@ function swapTheme() {
         themeIcon.setAttribute('d', sunPath);
     }
 
+    // get the navbar area
+    const navbarNav = getByID("navbar-nav");
+    
+    // if on mobile, and currently expanded
+    if (navbarNav.classList.contains("show")) {
+        // close it when the theme-switcher button is clicked
+        navbarNav.classList.remove("show");
+    }
 }
 
 /**
