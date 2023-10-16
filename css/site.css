@@ -90,3 +90,8 @@ li {
 .list-group-item {
     border-color: var(--primary-color);
 }
+
+button#theme-switcher > svg {
+    fill: var(--accent-color);
+    width: 30px;
+}
