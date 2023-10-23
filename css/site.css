@@ -1,4 +1,5 @@
 :root {
+    /* Colors */
     --primary-color: #3EB4B6;
     --primary-color-variant: #22577a;
     --secondary-color: #c7f9cc;
@@ -14,6 +15,9 @@
 
     --navbar-toggler-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280, 74, 87, 122' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     --accordion-dropdown-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+
+    /* Other */
+    --transition-time: .3s;
 }
 
 [data-bs-theme=dark] {
@@ -30,7 +34,7 @@ body {
 a#theme-switcher.nav-link > svg,
 a.icon > svg {
     fill: var(--primary-color);
-    transition: fill .2s;
+    transition: fill var(--transition-time);
 }
 
 a#theme-switcher.nav-link:hover > svg,
@@ -94,7 +98,14 @@ button.accordion-button:not(.collapsed) {
     color: var(--primary-color);
     font-size: 75%;
     font-weight: bold;
-    transition: background .3s ease-in-out;
+}
+
+button.accordion-button.collapsed,
+button.accordion-button:not(.collapsed),
+button.accordion-button,
+button.btn,
+a.btn {
+    transition: background var(--transition-time), color var(--transition-time);
 }
 
 button.accordion-button:hover,
@@ -128,6 +139,7 @@ li.list-group-item ul li {
 .accordion-body,
 li.list-group-item {
     background: var(--primary-color-variant);
+    transition: background var(--transition-time), color var(--transition-time);
 }
 
 /******************
