@@ -1,0 +1,114 @@
+:root {
+    --primary-color: #38a3a5;
+    --primary-color-variant: #22577a;
+    --secondary-color: #c7f9cc;
+    --secondary-color-variant: #57cc99;
+    
+    --accent-color: #80ed99;
+
+    /*Bootstrap overloads*/
+    --bs-body-bg: var(--secondary-color);
+    --bs-body-color: var(--secondary-color-variant);
+    --bs-border-color: var(--primary-color);
+    --bs-border-color-translucent: var(--primary-color);
+
+    --accordion-dropdown-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%c7f9cc'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+}
+
+[data-bs-theme=dark] {
+    --primary-color: #22577a;
+    --primary-color-variant: #38a3a5;
+    --secondary-color: #57cc99;
+    --secondary-color-variant: #c7f9cc;
+}
+
+body {
+    background: var(--primary-color);
+}
+
+a#theme-switcher.nav-link > svg,
+a.icon > svg {
+    fill: var(--primary-color);
+    transition: fill .2s;
+}
+
+a#theme-switcher.nav-link:hover > svg,
+a.icon:hover > svg {
+    fill: var(--accent-color);
+}
+
+/******************
+*** NAVIGATION ****
+******************/
+
+nav.navbar {
+    background: var(--secondary-color);
+}
+
+a.nav-link {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+a.nav-link.active {
+    color: var(--primary-color-variant) !important;
+}
+
+a.nav-link:hover {
+    color: var(--accent-color);
+}
+
+.navbar-nav a#theme-switcher.nav-link > svg {
+    width: 30px;
+}
+
+.navbar-nav a#theme-switcher.nav-link:hover > svg {
+    cursor: pointer;
+}
+
+/******************
+***** RESUME ******
+******************/
+
+a.icon {
+    text-decoration: none;
+}
+
+a.icon > svg {
+    width: 4rem;
+}
+
+button.accordion-button.collapsed,
+button.accordion-button:not(.collapsed) {
+    background: var(--secondary-color);
+    color: var(--secondary-color-variant);
+    font-size: x-large;
+    transition: background .3s ease-in-out;
+}
+
+button.accordion-button:hover {
+    background: var(--accent-color);
+}
+
+button.accordion-button::after,
+button.accordion-button:not(.collapsed)::after {
+    background-image: var(--accordion-dropdown-icon);
+}
+
+.list-group-flush > li.list-group-item p {
+    margin-bottom: .25rem;
+}
+
+li.list-group-item ul li {
+    list-style-type: square;
+}
+
+.accordion-body a.nav-link {
+    text-decoration: underline;
+}
+
+.accordion-body,
+li.list-group-item {
+    background: var(--primary-color-variant);
+    color: var(--primary-color);
+}
