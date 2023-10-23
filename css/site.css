@@ -38,6 +38,11 @@ a.icon:hover > svg {
     fill: var(--accent-color);
 }
 
+a.btn,
+button.btn {
+    background-color: var(--secondary-color);
+}
+
 /******************
 *** NAVIGATION ****
 ******************/
@@ -93,7 +98,8 @@ button.accordion-button:not(.collapsed) {
 }
 
 button.accordion-button:hover,
-button.btn:hover {
+button.btn:hover,
+a.btn:hover {
     background: var(--accent-color);
     color: #22577a;
 }
@@ -130,8 +136,4 @@ li.list-group-item {
 
 .form-floating > textarea.form-control {
     height: 100px;
-}
-
-button.btn {
-    background-color: var(--secondary-color);
 }
