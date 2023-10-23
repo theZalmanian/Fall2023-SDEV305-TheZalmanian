@@ -9,8 +9,8 @@
     /* Bootstrap overloads */
     --bs-body-bg: var(--secondary-color);
     --bs-body-color: var(--primary-color);
-    --bs-border-color: var(--primary-color);
-    --bs-border-color-translucent: var(--primary-color);
+    --bs-border-color: var(--primary-color-variant);
+    --bs-border-color-translucent: var(--primary-color-variant);
 
     --navbar-toggler-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280, 74, 87, 122' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     --accordion-dropdown-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
@@ -101,6 +101,10 @@ button.btn:hover {
 button.accordion-button::after,
 button.accordion-button:not(.collapsed)::after {
     background-image: var(--accordion-dropdown-icon);
+}
+
+.list-group-flush > li.list-group-item {
+    --bs-list-group-border-color: var(--primary-color);
 }
 
 .list-group-flush > li.list-group-item p {
