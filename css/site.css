@@ -1,15 +1,16 @@
 :root {
     /* Colors */
-    --primary-color: #3EB4B6;
-    --primary-color-variant: #22577a;
-    --secondary-color: #c7f9cc;
-    --secondary-color-variant: #a1f5a9;
+    --primary-color: #A0C9E4;
+    --primary-color-variant: #1F4F6F;
     
-    --accent-color: #D86F95;
+    --secondary-color: #D6F9FF;
+    --secondary-color-variant: #333333;
+    
+    --accent-color: #886E44;
 
     /* Bootstrap overloads */
     --bs-body-bg: var(--secondary-color);
-    --bs-body-color: var(--primary-color);
+    --bs-body-color: var(--secondary-color-variant);
     --bs-border-color: var(--primary-color-variant);
     --bs-border-color-translucent: var(--primary-color-variant);
 
@@ -21,10 +22,13 @@
 }
 
 [data-bs-theme=dark] {
-    --primary-color: #22577a;
-    --primary-color-variant: #3EB4B6;
-    --secondary-color: #a1f5a9;
-    --secondary-color-variant: #c7f9cc;
+    --primary-color: #1F4F6F;
+    --primary-color-variant: #A0C9E4;
+
+    --secondary-color: #333333;
+    --secondary-color-variant: #D6F9FF;
+
+    --accent-color: #A38452;
 }
 
 body {
@@ -33,7 +37,7 @@ body {
 
 a#theme-switcher.nav-link > svg,
 a.icon > svg {
-    fill: var(--primary-color);
+    fill: var(--secondary-color-variant);
     transition: fill var(--transition-time);
 }
 
@@ -56,12 +60,12 @@ nav.navbar {
 }
 
 a.nav-link {
-    color: var(--primary-color);
+    color: var(--secondary-color-variant);
     font-weight: bold;
 }
 
 a.nav-link.active {
-    color: var(--primary-color-variant) !important;
+    color: var(--accent-color) !important;
 }
 
 a.nav-link:hover {
@@ -95,7 +99,7 @@ a.icon > svg {
 button.accordion-button.collapsed,
 button.accordion-button:not(.collapsed) {
     background: var(--secondary-color);
-    color: var(--primary-color);
+    color: var(--secondary-color-variant);
     font-size: 75%;
     font-weight: bold;
 }
@@ -112,7 +116,7 @@ button.accordion-button:hover,
 button.btn:hover,
 a.btn:hover {
     background: var(--accent-color);
-    color: #22577a;
+    color: var(--secondary-color);
 }
 
 button.accordion-button::after,
@@ -121,7 +125,7 @@ button.accordion-button:not(.collapsed)::after {
 }
 
 .list-group-flush > li.list-group-item {
-    --bs-list-group-border-color: var(--primary-color);
+    --bs-list-group-border-color: var(--primary-color-variant);
 }
 
 .list-group-flush > li.list-group-item p {
@@ -136,9 +140,13 @@ li.list-group-item ul li {
     text-decoration: underline;
 }
 
-.accordion-body,
+.accordion-body {
+    background: var(--secondary-color);
+}
+
 li.list-group-item {
-    background: var(--primary-color-variant);
+    background: var(--primary-color);
+    color: var(--secondary-color-variant);
     transition: background var(--transition-time), color var(--transition-time);
 }
 
