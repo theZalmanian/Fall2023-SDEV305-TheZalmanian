@@ -164,5 +164,5 @@ li.list-group-item {
 ******************/
 .language-badge {
     background: var(--secondary-color);
-    height: 3rem;
+    width: 3rem;
 }
