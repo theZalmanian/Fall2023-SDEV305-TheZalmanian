@@ -52,6 +52,10 @@ button.btn {
     background-color: var(--secondary-color);
 }
 
+a.btn {
+    font-weight: bold;
+}
+
 /******************
 *** NAVIGATION ****
 ******************/
