@@ -6,7 +6,7 @@
     --secondary-color: #D6F9FF;
     --secondary-color-variant: #333333;
     
-    --accent-color: #886E44;
+    --accent-color: #886e44;
 
     /* Bootstrap overloads */
     --bs-body-bg: var(--secondary-color);
@@ -14,7 +14,7 @@
     --bs-border-color: var(--primary-color-variant);
     --bs-border-color-translucent: var(--primary-color-variant);
 
-    --navbar-toggler-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280, 74, 87, 122' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    --navbar-toggler-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb%280, 51, 51, 51' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     --accordion-dropdown-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
 
     /* Other */
@@ -36,7 +36,8 @@ body {
 }
 
 a#theme-switcher.nav-link > svg,
-a.icon > svg {
+a.icon > svg,
+svg.language-badge {
     fill: var(--secondary-color-variant);
     transition: fill var(--transition-time);
 }
@@ -157,3 +158,7 @@ li.list-group-item {
 .form-floating > textarea.form-control {
     height: 100px;
 }
+
+/******************
+**** PROJECTS *****
+******************/
