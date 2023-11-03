@@ -9,7 +9,8 @@ window.addEventListener("load", function() {
     helpers.setupButtonOnClick("theme-switcher", swapTheme);
 
     // if the theme is set to dark mode in local storage
-    if(localStorage.getItem(THEME_STORAGE_KEY)) {
+    let storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if(storedTheme === "dark") {
         // swap the theme to dark (light mode is default on load)
         swapTheme();
     } 
@@ -18,7 +19,7 @@ window.addEventListener("load", function() {
 /**
  * The key used to store the current theme in local storage
  */
-const THEME_STORAGE_KEY = "theme-is-dark";
+const THEME_STORAGE_KEY = "stored-theme";
 
 /**
  * The attribute that sets a pages theme when added to the <html>
@@ -46,7 +47,7 @@ function swapTheme() {
         setThemeSwitcherIcon(moonPath);
 
         // save current theme to local storage
-        localStorage.setItem(THEME_STORAGE_KEY, false);
+        localStorage.setItem(THEME_STORAGE_KEY, "light");
     }
 
     // if the theme is light mode (not dark mode)
@@ -58,7 +59,7 @@ function swapTheme() {
         setThemeSwitcherIcon(sunPath);
 
         // save current theme to local storage
-        localStorage.setItem(THEME_STORAGE_KEY, true);
+        localStorage.setItem(THEME_STORAGE_KEY, "dark");
     }
 
     // if on mobile, collapse nav after theme switcher clicked
