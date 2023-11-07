@@ -1,3 +1,5 @@
+<?php $current_page = isset($_SESSION['current_page']) ? $_SESSION['current_page'] : ""; ?>
+
 <nav class="navbar sticky-top navbar-expand-md mb-2 border-bottom">
     <div class="container">
         <div class="d-flex justify-content-center align-items-center">
@@ -26,13 +28,13 @@
                 <a class="nav-link" href="/index.html">
                     Home
                 </a>
-                <a class="nav-link" href="/portfolio/resume.php">
+                <a class="nav-link <?php if($current_page == "Resume") { echo "active disabled"; } ?>" <?php if($current_page == "Resume") { echo "aria-current='page'"; } ?> href="/portfolio/resume.php">
                     Resume
                 </a>
-                <a class="nav-link" href="/portfolio/projects.php">
+                <a class="nav-link <?php if($current_page == "Projects") { echo "active disabled"; } ?>" <?php if($current_page == "Projects") { echo "aria-current='page'"; } ?> href="/portfolio/projects.php">
                     Projects
                 </a>
-                <a class="nav-link" href="/portfolio/contact.php">
+                <a class="nav-link <?php if($current_page == "Contact") { echo "active disabled"; } ?>" <?php if($current_page == "Contact") { echo "aria-current='page'"; } ?> href="/portfolio/contact.php">
                     Contact Me
                 </a>
                 <a class="nav-link" id="theme-switcher">

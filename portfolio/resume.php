@@ -14,7 +14,16 @@
     <script type="module" src="/js/theme-switcher.js"></script>
 </head>
 <body>
-    <?php require "../layouts/navigation.php"; ?>
+    <?php 
+        session_start();
+
+        // Set the current page
+        $_SESSION['current_page'] = "Resume";
+
+        session_write_close();
+
+        require "../layouts/navigation.php";     
+    ?>
     <main class="container">
         <div class="row">
             <div class="col-md-1 col-lg-2">
