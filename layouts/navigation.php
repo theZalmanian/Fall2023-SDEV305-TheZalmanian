@@ -1,4 +1,7 @@
 <?php
+    // get access to all helper methods
+    require_once("helpers.php"); 
+
     /**
      * A collection of all pages in the navigation and their corresponding links
      */
@@ -25,19 +28,6 @@
 
         // otherwise return empty string
         return "";
-    }
-
-    /**
-     * Gets and returns the page that is currently open from Session Storage, if any
-     * @return string the page that is currently open from Session Storage, if present; otherwise empty string
-     */
-    function getCurrentPage() {
-        // open access to the session
-        session_start();
-
-        // return the page that is currently open from Session Storage, 
-        // if one is not present, return an empty string
-        return isset($_SESSION["currentPage"]) ? $_SESSION["currentPage"] : ""; 
     }
 ?>
 
