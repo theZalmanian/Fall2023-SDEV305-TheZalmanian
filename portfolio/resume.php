@@ -15,13 +15,13 @@
 </head>
 <body>
     <?php 
+        // open access to the session
         session_start();
 
-        // Set the current page
-        $_SESSION['current_page'] = "Resume";
+        // save the current page
+        $_SESSION["currentPage"] = "Resume";
 
-        session_write_close();
-
+        // display site navigation
         require "../layouts/navigation.php";     
     ?>
     <main class="container">

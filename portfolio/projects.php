@@ -14,15 +14,15 @@
     <script type="module" src="/js/theme-switcher.js"></script>
 </head>
 <body>
-<?php 
+    <?php 
+        // open access to the session
         session_start();
 
-        // Set the current page
-        $_SESSION['current_page'] = "Projects";
+        // save the current page
+        $_SESSION["currentPage"] = "Projects";
 
-        session_write_close();
-
-        require "../layouts/navigation.php";     
+        // display site navigation
+        require "../layouts/navigation.php";   
     ?>
     <main class="container">
         <div class="row">

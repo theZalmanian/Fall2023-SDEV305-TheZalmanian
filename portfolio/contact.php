@@ -15,14 +15,14 @@
 </head>
 <body>
     <?php 
+        // open access to the session
         session_start();
 
-        // Set the current page
-        $_SESSION['current_page'] = "Contact";
+        // save the current page
+        $_SESSION["currentPage"] = "Contact Me";
 
-        session_write_close();
-
-        require "../layouts/navigation.php";     
+        // display site navigation
+        require "../layouts/navigation.php";   
     ?>
     <main class="container">
         <div class="row">
