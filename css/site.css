@@ -39,6 +39,11 @@
     color: var(--bs-danger) !important;
 }
 
+.alert {
+    width: fit-content;
+    margin: auto;
+}
+
 body {
     background: var(--primary-color);
 }

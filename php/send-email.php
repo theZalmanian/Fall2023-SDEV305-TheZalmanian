@@ -32,7 +32,7 @@
                             </p>
                         </ul>
                         </body>
-                        </html";
+                        </html>";
 
         // return the generated email content
         return $emailContent;
@@ -72,25 +72,20 @@
 
                 // if the message was sent, display success 
                 if($messageSent) {
-                    echo displayBootstrapAlert("<h4>Your message was sent successfully!</h4>");
+                    echo displayMessage("Your message was sent successfully!");
                 }
 
                 // if the message was not sent, display error 
                 else {
-                    echo displayError("Your message could not be sent at this time. Try again later.");
+                    echo displayMessage("ERROR: Your message could not be sent at this time", "Please try again later");
                 }
             }  
             
             // otherwise display error and link to contact form
-            else {
-                echo displayError("No submission received from Contact Form.");
-                
-                echo displayBootstrapAlert("<h4>
-                                                Please fill out the form and try again:
-                                            </h4>
-                                            <a class='btn btn-success py-2 m-2' href='/portfolio/contact.php'>
-                                                Contact
-                                            </a>");
+            else {                
+                echo displayMessageWithLink("/portfolio/contact.php", "Contact Me", 
+                                            "ERROR: No submission received from Contact Form", 
+                                            "Please fill out the form and try again");
             }
         ?>
     </body>
