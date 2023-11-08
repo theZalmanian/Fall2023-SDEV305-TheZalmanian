@@ -3,17 +3,18 @@ import * as helpers from './helpers.js';
 "use strict";
 
 // when the page loads
-window.addEventListener("load", function() {            
-    // setup onclick for the "Theme Switcher" button 
-    // so it alternates between light and dark mode
-    helpers.setupButtonOnClick("theme-switcher", swapTheme);
-
+window.addEventListener("load", function() {  
     // if the theme is set to dark mode in local storage
-    let storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-    if(storedTheme === "dark") {
+    if(localStorage.getItem(THEME_STORAGE_KEY) === "dark") {
         // swap the theme to dark (light mode is default on load)
         swapTheme();
     } 
+    
+    // if the "Theme Switcher" button exists on the page
+    if(helpers.getByID("theme-switcher") != null) {     
+        // setup its onclick to toggle between light and dark mode
+        helpers.setupButtonOnClick("theme-switcher", swapTheme);
+    }
 })
 
 /**
@@ -86,8 +87,11 @@ function setThemeSwitcherIcon(svgPath) {
     // grab the icon within the "Theme Switcher" button indicating the current theme
     const themeIcon = helpers.getByID("theme-icon");
 
-    // set it's path to the given path
-    themeIcon.setAttribute('d', svgPath);
+    // if it exists on the page
+    if(themeIcon != null) {
+        // set it's path to the given path
+        themeIcon.setAttribute('d', svgPath);
+    }
 }
 
 /**
@@ -96,9 +100,11 @@ function setThemeSwitcherIcon(svgPath) {
 function collapseMobileNav() {
     // get the navbar area
     const navbarNav = helpers.getByID("navbar-nav");
-    
-    // if on mobile, and navbar is currently expanded
-    if (navbarNav.classList.contains("show")) {
+
+    // if a navbar exists on the page, 
+    // and the page is being accessed on mobile, 
+    // and navbar is currently expanded
+    if (navbarNav != null && navbarNav.classList.contains("show")) {
         // collapse the navbar
         navbarNav.classList.remove("show");
     }
