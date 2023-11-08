@@ -24,7 +24,13 @@
             <div class="col-md-1 col-lg-2">
             </div>
             <div class="col-12 col-md-10 col-lg-8">
-                <div class="accordion mb-2" id="projects">
+                <div class="card p-2 text-center">
+                    <h1>
+                        Projects
+                    </h1> 
+                </div>
+
+                <div class="accordion my-2" id="projects">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" 
@@ -61,7 +67,7 @@
                                         </ul>
                                     </li>
                                     <li class="list-group-item text-center">
-                                        <strong>Technologies Used:</strong> PHP, JavaScript, HTML5, CSS, Bootstrap; MySQL; Git, GitHub; VS Code, PhpStorm
+                                        <b>Technologies Used:</b> PHP, JavaScript, HTML5, CSS, Bootstrap; MySQL; Git, GitHub; VS Code, PhpStorm
                                     </li>
                                     <li class="list-group-item">
                                         <div class="d-flex justify-content-center">
@@ -120,7 +126,7 @@
                                         </ul>
                                     </li>
                                     <li class="list-group-item text-center">
-                                        <strong>Technologies Used:</strong> C#, JavaScript, HTML5, CSS, Bootstrap; ASP.NET, EF Core, T-SQL; Git, GitHub; Visual Studio
+                                        <b>Technologies Used:</b> C#, JavaScript, HTML5, CSS, Bootstrap; ASP.NET, EF Core, T-SQL; Git, GitHub; Visual Studio
                                     </li>
                                     <li class="list-group-item">
                                         <div class="d-flex justify-content-center">
@@ -179,7 +185,7 @@
                                         </ul>
                                     </li>
                                     <li class="list-group-item text-center">
-                                        <strong>Technologies Used:</strong> Kotlin, XML; SQLite (Room DB); Git, GitHub; Android Studio
+                                        <b>Technologies Used:</b> Kotlin, XML; SQLite (Room DB); Git, GitHub; Android Studio
                                     </li>
                                     <li class="list-group-item">
                                         <div class="d-flex justify-content-center">
@@ -229,7 +235,7 @@
                                         </ul>
                                     </li>
                                     <li class="list-group-item text-center">
-                                        <strong>Technologies Used:</strong> C#; EF Core, T-SQL; Git, GitHub; Visual Studio
+                                        <b>Technologies Used:</b> C#; EF Core, T-SQL; Git, GitHub; Visual Studio
                                     </li>
                                     <li class="list-group-item">
                                         <div class="d-flex justify-content-center">
@@ -279,7 +285,7 @@
                                         </ul>
                                     </li>
                                     <li class="list-group-item text-center">
-                                        <strong>Technologies Used:</strong> TypeScript, JavaScript, HTML5, CSS; Git, GitHub; VS Code
+                                        <b>Technologies Used:</b> TypeScript, JavaScript, HTML5, CSS; Git, GitHub; VS Code
                                     </li>
                                     <li class="list-group-item">
                                         <div class="d-flex justify-content-center">

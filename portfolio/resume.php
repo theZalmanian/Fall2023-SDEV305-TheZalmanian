@@ -26,9 +26,9 @@
             <div class="col-12 col-md-10 col-lg-8">
                 <div class="container">
                     <div class="row card p-2 text-center" id="personal-info">
-                        <h2 class="col-12">
-                            <strong>Zalman Izak | Full-Stack Developer</strong>
-                        </h2> 
+                        <h1 class="col-12">
+                            Zalman Izak | Full-Stack Developer
+                        </h1> 
                         <div class="col-12 d-flex justify-content-center align-items-center" id="personal-links">
                             <a class="icon" href="tel:2539734358" aria-label="Phone">
                                 <svg viewBox="0 0 32.00 32.00" xmlns="http://www.w3.org/2000/svg">
@@ -130,16 +130,16 @@
                         <div class="accordion-body p-0">
                             <ul class="list-group list-group-flush px-3">
                                 <li class="list-group-item">
-                                    <strong>Programming Languages:</strong> C#, Java, JavaScript, TypeScript, PHP; T-SQL, MySQL; HTML5, CSS
+                                    <b>Programming Languages:</b> C#, Java, JavaScript, TypeScript, PHP; T-SQL, MySQL; HTML5, CSS
                                 </li>
                                 <li class="list-group-item">
-                                    <strong>Libraries/Frameworks:</strong> ASP.NET, EF Core, Bootstrap
+                                    <b>Libraries/Frameworks:</b> ASP.NET, EF Core, Bootstrap
                                 </li>
                                 <li class="list-group-item">
-                                    <strong>IDE & Design Tools:</strong> Visual Studio, VS Code, PhpStorm, IntelliJ IDEA, Azure Data Studio, SSMS
+                                    <b>IDE & Design Tools:</b> Visual Studio, VS Code, PhpStorm, IntelliJ IDEA, Azure Data Studio, SSMS
                                 </li>
                                 <li class="list-group-item">
-                                    <strong>Additional Skills:</strong> Source control workflow, specifically using GitHub, in personal and team environments.
+                                    <b>Additional Skills:</b> Source control workflow, specifically using GitHub, in personal and team environments.
                                 </li>
                             </ul>
                         </div>
@@ -178,7 +178,7 @@
                                             </li>
                                         </ul>
                                         <p>
-                                            <strong>Technologies Used:</strong> C#, JavaScript, HTML5, CSS, Bootstrap; ASP.NET, EF Core, T-SQL; Visual Studio
+                                            <b>Technologies Used:</b> C#, JavaScript, HTML5, CSS, Bootstrap; ASP.NET, EF Core, T-SQL; Visual Studio
                                         </p>
                                     </li>
                                     <li class="list-group-item" id="electronics-store-pos">
@@ -204,7 +204,7 @@
                                             </li>
                                         </ul>
                                         <p>
-                                            <strong>Technologies Used:</strong> C#; EF Core, T-SQL; Git, GitHub; Visual Studio
+                                            <b>Technologies Used:</b> C#; EF Core, T-SQL; Git, GitHub; Visual Studio
                                         </p>
                                     </li>
                                     <li class="list-group-item" id="pig-dice">
@@ -233,7 +233,7 @@
                                             </li>
                                         </ul>
                                         <p>
-                                            <strong>Technologies Used</strong>: TypeScript, JavaScript, HTML5, CSS; Git, GitHub; VS Code
+                                            <b>Technologies Used</b>: TypeScript, JavaScript, HTML5, CSS; Git, GitHub; VS Code
                                         </p>
                                     </li>
                                 </ul>
