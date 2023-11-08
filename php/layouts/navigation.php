@@ -1,6 +1,6 @@
 <?php
     // get access to all helper methods
-    require_once("helpers.php"); 
+    require_once("/home/thezalma/public_html/php/helpers.php"); 
 
     /**
      * A collection of all pages in the navigation and their corresponding links

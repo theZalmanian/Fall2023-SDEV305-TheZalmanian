@@ -1,6 +1,6 @@
 <?php 
     // get access to all helper methods
-    require_once("../layouts/helpers.php"); 
+    require_once("../php/helpers.php"); 
 
     // save the current pages name to session
     setCurrentPage("Projects");
@@ -11,13 +11,13 @@
 <head>
     <?php 
         // include standard header metadata
-        require "../layouts/standard-page-metadata.php"; 
+        require "../php/layouts/standard-page-metadata.php"; 
     ?>
 </head>
 <body>
     <?php 
         // display site navigation
-        require "../layouts/navigation.php";     
+        require "../php/layouts/navigation.php";     
     ?>
     <main class="container">
         <div class="row">

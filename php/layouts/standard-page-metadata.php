@@ -1,6 +1,6 @@
 <?php 
     // get access to all helper methods
-    require_once("helpers.php"); 
+    require_once("/home/thezalma/public_html/php/helpers.php");
 ?> 
 
 <meta charset="utf-8">

@@ -1,6 +1,8 @@
 <?php 
-    // open access to the session
-    session_start();
+    // only start a session if one does not exist yet
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
 
     /**
      * Gets and returns the page that is currently open from Session Storage, if any

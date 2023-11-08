@@ -1,6 +1,6 @@
 <?php
     // get access to all helper methods
-    require_once("../layouts/helpers.php"); 
+    require_once("helpers.php");
 
     /**
      * Generates and returns HTML content for the email using the given data
@@ -44,7 +44,7 @@
     <head>
         <?php 
             // include standard header metadata
-            require "../layouts/standard-page-metadata.php"; 
+            require "/home/thezalma/public_html/php/layouts/standard-page-metadata.php"; 
         ?>
     </head>
     <body>
