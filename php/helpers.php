@@ -66,7 +66,7 @@
      * @return string a Bootstrap Alert containing the given HTML content
      */
     function displayBootstrapAlert($content) {
-        return "<div class='alert alert-light text-center my-3' role='alert'>
+        return "<div class='alert alert-light text-center my-3 border' role='alert'>
                     {$content}
                 </div>";
     }

@@ -18,7 +18,7 @@
     --bs-danger: var(--accent-color);
 
     /* Other */
-    --transition-time: .3s;
+    --transition-time: .4s;
 }
 
 [data-bs-theme=dark] {
@@ -47,11 +47,11 @@
 
 .alert-light {
     --bs-alert-bg: var(--bs-body-bg);
-    --bs-alert-color: var(--secondary-color)
+    --bs-alert-color: var(var(--secondary-color-variant))
 }
 
 .alert.alert-light > hr {
-    color: var(--secondary-color);
+    color: var(--secondary-color-variant);
 }
 
 .list-group-flush > li.list-group-item {
