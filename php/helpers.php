@@ -38,7 +38,7 @@
                            <hr>
                            <h4>{$message}</h4>
                            <hr>
-                           <a class='btn py-2 m-2' href='{$linkHref}'>{$linkText}</a>";
+                           <a class='btn py-2 m-2 border' href='{$linkHref}'>{$linkText}</a>";
 
         // place and return message content inside Bootstrap Alert
         return displayBootstrapAlert($messageContent);
