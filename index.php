@@ -1,12 +1,9 @@
 <?php 
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-
-    // get access to all helper methods
-    require_once("/home/thezalma/public_html/php/helpers.php");
+    // get access to all PHP helpers
+    require_once("/home/thezalma/public_html/initialize.php");
 
     // save the current pages name to session
-    setCurrentPage("Home");
+    $pageTitle = "Home";
 ?>
 
 <!DOCTYPE html>
@@ -14,13 +11,13 @@
 <head>
     <?php 
         // include standard header metadata
-        require_once("/home/thezalma/public_html/php/layouts/standard-page-metadata.php");
+        require_once(LAYOUTS_PATH . "/standard-page-metadata.php");
     ?>
 </head>
 <body>
     <?php 
         // display site navigation
-        require_once("/home/thezalma/public_html/php/layouts/navigation.php");
+        require_once(LAYOUTS_PATH . "/navigation.php");
     ?>
     <main class="container">
         <div class="row">
