@@ -1,7 +1,4 @@
 <?php
-    // get access to all helper methods
-    require_once("/home/thezalma/public_html/php/helpers.php"); 
-
     /**
      * A collection of all pages in the navigation and their corresponding links
      */
@@ -19,8 +16,11 @@
      * @return string a string containing the active and disabled classes if match; otherwise empty string
      */
     function isActive($pageName) {
+        // include the current page's title
+        global $pageTitle;
+
         // if the given page name matches that of the current page
-        if($pageName === getCurrentPage()) {
+        if($pageName === $pageTitle) {
             // return the active and disabled attributes to be
             // added to that link's class list
             return " " . "active disabled";
