@@ -3,7 +3,7 @@
     require_once("/home/thezalma/public_html/initialize.php");
 
     // save the current pages name to session
-    $pageTitle = "Projects";
+    $currPageTitle = "Projects";
 ?>
 
 <!DOCTYPE html>
