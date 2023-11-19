@@ -6,7 +6,7 @@
      * A collection of all pages in the navigation and their corresponding links
      */
     $navigationPages = array(
-        "Home" => "/index.html",
+        "Home" => "../index.php",
         "Resume" => "/portfolio/resume.php",
         "Projects" => "/portfolio/projects.php",
         "Contact Me" => "/portfolio/contact.php"

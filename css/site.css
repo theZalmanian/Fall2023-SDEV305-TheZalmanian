@@ -47,7 +47,7 @@
 
 .alert-light {
     --bs-alert-bg: var(--bs-body-bg);
-    --bs-alert-color: var(var(--secondary-color-variant))
+    --bs-alert-color: var(--secondary-color-variant);
 }
 
 .alert.alert-light > hr {
