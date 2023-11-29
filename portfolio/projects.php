@@ -1,6 +1,6 @@
 <?php 
     // get access to all PHP helpers
-    require_once("/home/thezalma/public_html/initialize.php");
+    require_once("/home/thezalma/public_html/initial.php");
 
     // save the current pages name to session
     $currPageTitle = "Projects";
