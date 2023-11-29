@@ -6,7 +6,7 @@
         "Home" => "../index.php",
         "Resume" => "/portfolio/resume.php",
         "Projects" => "/portfolio/projects.php",
-        "Contact Me" => "/portfolio/contact.php"
+        "Guestbook" => "/portfolio/guestbook.php"
     );
 ?>
 

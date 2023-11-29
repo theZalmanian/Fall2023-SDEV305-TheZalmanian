@@ -3,7 +3,7 @@
     require_once("/home/thezalma/public_html/initial.php");
 
     // save the current pages name to session
-    $currPageTitle = "Contact Me";
+    $currPageTitle = "Guestbook";
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
             <div class="col-md-8 col-lg-6">
                 <div class="card p-2 text-center">
                     <h1>
-                        Contact Me
+                        Guestbook
                     </h1> 
                 </div>
 
