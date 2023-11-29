@@ -62,4 +62,54 @@
                     {$content}
                 </div>";
     }
+
+    /******************
+    ****** MySQL ******
+    ******************/
+
+    /**
+     * Opens a connection to the DB, executes the given query, closes the DB connection, and returns the result
+     *
+     * @param string $query The SQL query to be executed
+     * @return mixed a mysqli_result object for successful SELECT queries, and true/false for CREATE, UPDATE, and DELETE queries
+     */
+    function executeQuery($query) {
+        // open connection to DB
+        $dbConnection = connectDB();
+
+        // execute query and capture result
+        $result = mysqli_query($dbConnection, $query);
+
+        // close connection to DB
+        disconnectDB($dbConnection);
+
+        return $result;
+    }
+
+    /**
+     * Opens a connection to the DB, executes the given query, displays success or error message,
+     * closes the DB connection, and returns the result
+     *
+     * @param string $query The SQL query to be executed
+     * @return mixed a mysqli_result object for successful SELECT queries, and true/false for CREATE, UPDATE, and DELETE queries
+     */
+    function executeQueryDebugging($query) {
+        // open connection to DB
+        $dbConnection = connectDB();
+
+        // execute query and capture result
+        $result = mysqli_query($dbConnection, $query);
+
+        // display success or fail
+        if ($result) {
+            echo "<p>Query successful!</p>";
+        } else {
+            echo "<p>Query failed" . mysqli_error($dbConnection)  . "</p>";
+        }
+
+        // close connection to DB
+        disconnectDB($dbConnection);
+
+        return $result;
+    }
 ?>
