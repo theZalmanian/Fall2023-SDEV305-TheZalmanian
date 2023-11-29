@@ -1,5 +1,82 @@
 <?php 
     /**
+     * Generates and returns a Bootstrap Floating Label textbox, where the label sits within the textbox, 
+     * using the given data and value, if any
+     * @param string $inputID The ID attribute being added to the input for use with label
+     * @param string $inputLabelText The text being displayed within the input's label
+     * @param boolean $isRequired Whether the input is required for submission
+     * @param string $value (Optional) The text being preloaded within the input, if any
+     * @return string a Bootstrap Floating Label textbox generated using the given data
+     */
+    function generateBootstrapFloatingTextBox($inputID, $inputLabelText, $isRequired, $value = "") {
+        // if the option was given as required
+        $requiredAttribute = "";
+        if($isRequired) {
+            // update the label to display a required *
+            $inputLabelText .= displayRequired();
+
+            // add the required attribute to input
+            $requiredAttribute = "required";
+        }
+        
+        // generate Bootstrap Floating Label input area using given data
+        return "<div class='form-floating my-2'>
+                    <input type='text' class='form-control' id='{$inputID}' name='{$inputID}'
+                        placeholder='' value='{$value}' {$requiredAttribute}>
+                    <label for='{$inputID}'>
+                        {$inputLabelText}
+                    </label>
+                </div>";
+    }
+
+    /**
+     * Generates and returns a Bootstrap Floating Label textarea, where the label sits within the textarea, 
+     * using the given data and value, if any
+     * @param string $inputID The ID attribute being added to the input for use with label
+     * @param string $inputLabelText The text being displayed within the input's label
+     * @param boolean $isRequired Whether the input is required for submission
+     * @param string $value (Optional) The text being preloaded within the input, if any
+     * @return string a Bootstrap Floating Label input generated using the given data
+     */
+    function generateBootstrapFloatingTextArea($inputID, $inputLabelText, $isRequired, $value = "") {
+        // if the option was given as required
+        $requiredAttribute = "";
+        if($isRequired) {
+            // update the label to display a required *
+            $inputLabelText .= displayRequired();
+
+            // add the required attribute to input
+            $requiredAttribute = "required";
+        }
+
+        // generate Bootstrap Floating Label input area using given data
+        return "<div class='form-floating my-2'>
+                    <textarea class='form-control' id='{$inputID}' name='{$inputID}' 
+                        placeholder='' {$requiredAttribute}>{$value}</textarea>
+                    <label for='{$inputID}'>
+                        {$inputLabelText}
+                    </label>
+                </div>";
+    }
+
+    /**
+     * Generates and returns an HTML span signifying that an input is required
+     * @return string an HTML span signifying that an input is required
+     */
+    function displayRequired() {
+        return " " . "<span class='text-danger'>*</span>";
+    }
+
+    /**
+     * Returns the given text inside of an HTML strong element
+     * @param string $text The message being displayed inside an HTML strong element
+     * @return string the given message inside of an HTML strong element
+     */
+    function displayStrong($text) {
+        return "<strong>{$text}</strong>" . " ";
+    }
+
+    /**
      * Generates and returns a Bootstrap Alert to be displayed containing the given title and message, 
      * along with the given link styled as a button at the bottom
      * @param string $linkHref The links destination path
