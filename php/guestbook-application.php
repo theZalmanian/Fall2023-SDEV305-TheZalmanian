@@ -15,7 +15,7 @@
     ?>
 </head>
 <body>
-    <main class="container">
+    <main class="container mt-3">
         <div class="row">
             <div class="col-md-2 col-lg-3">
             </div>

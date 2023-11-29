@@ -24,7 +24,10 @@
             <div class="col-md-2 col-lg-3">
             </div>
             <div class="col-md-8 col-lg-6">
-                
+                <?php
+                    echo displayMessageWithLink("/php/guestbook-application.php", "Guestbook Application",
+                                                "Want to leave a guestbook entry? Submit an application on the page linked below!");
+                ?>
             </div>
             <div class="col-md-2 col-lg-3">
             </div>

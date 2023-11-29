@@ -39,18 +39,18 @@
 
                 // if the message was sent, display success 
                 if($messageSent) {
-                    echo displayMessage("Your message was sent successfully!");
+                    echo generateMessage("Your message was sent successfully!");
                 }
 
                 // if the message was not sent, display error 
                 else {
-                    echo displayMessage("ERROR: Your message could not be sent at this time", "Please try again later");
+                    echo generateMessage("ERROR: Your message could not be sent at this time", "Please try again later");
                 }
             }  
             
             // otherwise display error and link to contact form
             else {                
-                echo displayMessageWithLink("/portfolio/contact.php", "Contact Me", 
+                echo generateMessageWithLink("/portfolio/contact.php", "Contact Me", 
                                             "ERROR: No submission received from Contact Form", 
                                             "Please fill out the form and try again");
             }
