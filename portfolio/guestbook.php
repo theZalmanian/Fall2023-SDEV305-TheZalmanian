@@ -25,8 +25,8 @@
             </div>
             <div class="col-md-8 col-lg-6">
                 <?php
-                    echo displayMessageWithLink("/php/guestbook-application.php", "Guestbook Application",
-                                                "Want to leave a guestbook entry? Submit an application on the page linked below!");
+                    echo generateMessageWithLink("/php/guestbook-application.php", "Guestbook Application",
+                                                 "Want to leave a guestbook entry? <br> Submit an application on the page linked below!");
                 ?>
             </div>
             <div class="col-md-2 col-lg-3">

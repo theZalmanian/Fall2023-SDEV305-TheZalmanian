@@ -20,7 +20,7 @@
         }
         
         // generate Bootstrap Floating Label input area using given data
-        return "<div class='form-floating my-2'>
+        return "<div class='form-floating'>
                     <input type='text' class='form-control' id='{$inputID}' name='{$inputID}'
                         placeholder='' value='{$value}' {$requiredAttribute}>
                     <label for='{$inputID}'>
@@ -50,7 +50,7 @@
         }
 
         // generate Bootstrap Floating Label input area using given data
-        return "<div class='form-floating my-2'>
+        return "<div class='form-floating'>
                     <textarea class='form-control' id='{$inputID}' name='{$inputID}' 
                         placeholder='' {$requiredAttribute}>{$value}</textarea>
                     <label for='{$inputID}'>
@@ -135,8 +135,12 @@
      * @return string a Bootstrap Alert containing the given HTML content
      */
     function generateBootstrapAlert($content) {
-        return "<div class='alert alert-light text-center my-3 border' role='alert'>
-                    {$content}
+        return "<div class='row mx-1 mx-md-0'>
+                    <div class='col-12'>
+                        <div class='alert alert-light text-center mb-3 border' role='alert'>
+                            {$content}
+                        </div>
+                    </div>
                 </div>";
     }
 

@@ -20,32 +20,24 @@
             <div class="col-md-2 col-lg-3">
             </div>
             <div class="col-md-8 col-lg-6">
-                <div class="card p-2 text-center">
-                    <h1>
-                        Guestbook Application
-                    </h1> 
-                </div>
+                <form class="row mx-1" id="guestbook-application" action="../php/send-email.php" method="post">
+                    <div class="card col-12 my-1 p-2 text-center">
+                        <h1>
+                            Guestbook Application
+                        </h1> 
+                    </div>
 
-                <form class="my-2" id="contact-form" action="../php/send-email.php" method="post">
-                    <div class="card p-3 my-1">
-                        <div class="contact form-floating">
-                            <input type="text" class="form-control" id="name" name="name"
-                                placeholder="" required>
-                            <label for="name">
-                                Name <span class="text-danger">*</span>
-                            </label>
-                        </div>
+                    <div class="card col-12 my-1 p-3">
+                        <?php 
+                            echo generateBootstrapFloatingTextBox("name", "Name", true)
+                        ?>
                     </div>
-                    <div class="card p-3 my-1">
-                        <div class="contact form-floating">
-                            <textarea class="form-control" id="message" name="message"
-                                placeholder="" required></textarea>
-                            <label for="message">
-                                Message <span class="text-danger">*</span>
-                            </label>
-                        </div>
+                    <div class="card col-12 my-1 p-3">
+                        <?php 
+                            echo generateBootstrapFloatingTextArea("message", "Message", true)
+                        ?>
                     </div>
-                    <div class="card p-3 my-1">
+                    <div class="card col-12 my-1 p-3">
                         <button class="btn py-2 border" id="submit-contact">Submit</button>
                     </div>
                 </form>

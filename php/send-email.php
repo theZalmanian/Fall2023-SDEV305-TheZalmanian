@@ -3,7 +3,7 @@
     require_once("/home/thezalma/public_html/initial.php");
 
     // save the current pages name to session
-    $currPageTitle = "Send Message";
+    $currPageTitle = "Send Application";
 ?>
 
 <!DOCTYPE html>
@@ -15,46 +15,48 @@
         ?>
     </head>
     <body>
-        <?php
-            // setup variables to hold Contact form inputs
-            $name = $_POST["name"];
-            $email = $_POST["email"];
-            $message = $_POST["message"];
+        <main class="mt-3">
+            <?php
+                // setup variables to hold Contact form inputs
+                $name = $_POST["name"];
+                $message = $_POST["message"];
 
-            // check that all required inputs were submitted on the Contact form
-            if( isset($name) && isset($email) && isset($message) ) {
-                // setup sending and receiving addresses
-                $sendToAddress = "";
-                $sendFromAddress = "PortfolioContact@greenriverdev.com";
+                // check that all required inputs were submitted on the Contact form
+                if( isset($name) && isset($message) ) {
+                    // setup sending and receiving addresses
+                    $sendToAddress = "";
+                    $sendFromAddress = "GuestbookApplication@thezalmanian.greenriverdev.com";
 
-                // setup headers for html email
-                $headers = "MIME-Version: 1.0" . "\r\n";
-                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                $headers .= "From: $sendFromAddress" . "\r\n";
+                    // setup headers for html email
+                    $headers = "MIME-Version: 1.0" . "\r\n";
+                    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                    $headers .= "From: $sendFromAddress" . "\r\n";
 
-                $subject = "Portfolio Contact";
+                    $subject = "Guestbook Application";
 
-                // attempt to send email with given data
-                $messageSent = mail($sendToAddress, $subject, setupEmailContent($name, $email, $message), $headers);
+                    // attempt to send email with given data
+                    $messageSent = mail($sendToAddress, $subject, setupEmailContent($name, $message), $headers);
 
-                // if the message was sent, display success 
-                if($messageSent) {
-                    echo generateMessage("Your message was sent successfully!");
+                    // if the message was sent, display success 
+                    if($messageSent) {
+                        echo generateMessage("Your application was submitted successfully!");
+                    }
+
+                    // if the message was not sent, display error 
+                    else {
+                        echo generateMessage("Please try again later", 
+                                            "ERROR: Your application could not be submitted at this time");
+                    }
+                }  
+                
+                // otherwise display error and link to contact form
+                else {                
+                    echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook Application", 
+                                                "Please fill out the form and try again",
+                                                "ERROR: No submission received from Guestbook Application");
                 }
-
-                // if the message was not sent, display error 
-                else {
-                    echo generateMessage("ERROR: Your message could not be sent at this time", "Please try again later");
-                }
-            }  
-            
-            // otherwise display error and link to contact form
-            else {                
-                echo generateMessageWithLink("/portfolio/contact.php", "Contact Me", 
-                                            "ERROR: No submission received from Contact Form", 
-                                            "Please fill out the form and try again");
-            }
-        ?>
+            ?>
+        </main>
     </body>
 </html>
 
@@ -66,29 +68,25 @@
      * @param string $message the message being sent by email
      * @return string HTML content for the email message
      */
-    function setupEmailContent($name, $email, $message) {
+    function setupEmailContent($name, $message) {
         // setup most of email content
         $emailContent = "<html lang='en'>
-                        <head>
-                            <title>Portfolio Contact</title>
-                        </head>
-                        <body>
-                            <h3>
-                                <i>Portfolio Contact</i>
-                            </h3>
-                            <h4>
-                                From: {$email}
-                            </h4>
-                            <p>
-                                {$message}
-                            </p>
-                            <p>
-                                Sincerely,
-                                <br>
-                                {$name}
-                            </p>
-                        </ul>
-                        </body>
+                            <head>
+                                <title>Guestbook Application</title>
+                            </head>
+                            <body>
+                                <h3>
+                                    <i>Guestbook Application</i>
+                                </h3>
+                                <p>
+                                    {$message}
+                                </p>
+                                <p>
+                                    Sincerely,
+                                    <br>
+                                    {$name}
+                                </p>
+                            </body>
                         </html>";
 
         // return the generated email content
