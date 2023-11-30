@@ -17,11 +17,11 @@
     <body>
         <main class="mt-3">
             <?php
-                // setup variables to hold Contact form inputs
+                // setup variables and check that all required inputs were 
+                // submitted on the Guestbook Application form
                 $name = $_POST["name"];
                 $message = $_POST["message"];
 
-                // check that all required inputs were submitted on the Contact form
                 if( isset($name) && isset($message) ) {
                     // setup sending and receiving addresses
                     $sendToAddress = "";
@@ -37,23 +37,31 @@
                     // attempt to send email with given data
                     $messageSent = mail($sendToAddress, $subject, setupEmailContent($name, $message), $headers);
 
-                    // if the message was sent, display success 
+                    // if the message was sent
                     if($messageSent) {
-                        echo generateMessage("Your application was submitted successfully!");
+                        // display success to user
+                        echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook", 
+                                                     "Your application was submitted successfully!");
+
+                        // insert given guestbook entry to DB, as unpublished
+                        executeQuery("INSERT INTO GuestbookEntries (Name, Message, Published) 
+                                        VALUES ('{$name}', '{$message}', '0')");
+
                     }
 
                     // if the message was not sent, display error 
                     else {
-                        echo generateMessage("Please try again later", 
-                                            "ERROR: Your application could not be submitted at this time");
+                        echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook",
+                                                     "Please try again later", 
+                                                     "ERROR: Your application could not be submitted at this time");
                     }
                 }  
                 
-                // otherwise display error and link to contact form
+                // otherwise display error and link to Guestbook Application form
                 else {                
-                    echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook Application", 
-                                                "Please fill out the form and try again",
-                                                "ERROR: No submission received from Guestbook Application");
+                    echo generateMessageWithLink("/php/guestbook-application.php", "Guestbook Application", 
+                                                 "Please fill out the form and try again",
+                                                 "ERROR: No submission received from Guestbook Application");
                 }
             ?>
         </main>
