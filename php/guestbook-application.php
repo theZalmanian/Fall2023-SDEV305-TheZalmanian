@@ -29,7 +29,9 @@
 
                     <div class="card col-12 my-1 p-3">
                         <?php 
-                            echo generateBootstrapFloatingTextBox("name", "Name", true)
+                            // if user previously submitted a Guestbook entry (and we now have their names),
+                            // autofill it into the generated "Name" textbox
+                            echo generateBootstrapFloatingTextBox("name", "Name", true, $_COOKIE[NAME_KEY] ?? "");
                         ?>
                     </div>
                     <div class="card col-12 my-1 p-3">
