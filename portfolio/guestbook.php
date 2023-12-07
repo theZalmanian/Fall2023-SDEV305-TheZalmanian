@@ -25,8 +25,19 @@
             </div>
             <div class="col-md-8 col-lg-6">
                 <?php
+                    // link to guestbook application page
                     echo generateMessageWithLink("/php/guestbook-application.php", "Guestbook Application",
                                                  "Want to leave a guestbook entry? <br> Submit an application on the page linked below!");
+                
+                    // get all guestbook entries in DB marked as published
+                    $result = executeQuery("SELECT * 
+                                            FROM GuestbookEntries
+                                            WHERE Published = TRUE");
+
+                    // run through all returned entries
+                    while($currEntry = mysqli_fetch_assoc($result)) {
+                        echo generateGuestbookEntryDisplay($currEntry["Name"], $currEntry["Message"]);
+                    }
                 ?>
             </div>
             <div class="col-md-2 col-lg-3">
@@ -35,3 +46,12 @@
     </main>
 </body>
 </html>
+
+<?php
+    function generateGuestbookEntryDisplay($name, $message) {
+        return "<div class='card'>
+                    <h1>{$name} replied x days ago</h1>
+                    <p>{$message}</p>
+                </div>";
+    }
+?>
