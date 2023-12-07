@@ -137,7 +137,7 @@
     function generateBootstrapAlert($content) {
         return "<div class='row mx-1 mx-md-0'>
                     <div class='col-12'>
-                        <div class='alert alert-light text-center mb-3 border' role='alert'>
+                        <div class='alert alert-light text-center mb-3 w-100 border' role='alert'>
                             {$content}
                         </div>
                     </div>

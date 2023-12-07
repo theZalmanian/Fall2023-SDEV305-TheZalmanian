@@ -61,8 +61,8 @@
                                                         "Your application was submitted successfully!");
                                                         
                             // insert given guestbook entry to DB, marked as unpublished (0) by default
-                            executeQuery("INSERT INTO GuestbookEntries (Name, Message, Token) 
-                                            VALUES ('{$name}', '{$message}', '{$authToken}')");
+                            executeQuery("INSERT INTO GuestbookEntries (Name, Message, SubmissionDate, Token) 
+                                            VALUES ('{$name}', '{$message}', '" . date("Y-m-d H:i:s") . "', '{$authToken}')");
                         }
 
                         // if the application was submitted & message could not be sent
@@ -133,11 +133,8 @@
                             <i>{$subject}</i>
                         </h3>
                         <h4>
-                            <strong>{$name} says:<strong>
+                            " . displayStrong($name . " says:") . " {$message}
                         </h4>
-                        <p>
-                            {$message}
-                        </p>
                         <a href='{$approvalLink}?token={$authToken}'>
                             Approve Submission
                         </a>

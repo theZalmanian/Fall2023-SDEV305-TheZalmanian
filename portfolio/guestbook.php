@@ -36,7 +36,7 @@
 
                     // run through all returned entries
                     while($currEntry = mysqli_fetch_assoc($result)) {
-                        echo generateGuestbookEntryDisplay($currEntry["Name"], $currEntry["Message"]);
+                        echo generateGuestbookEntryDisplay($currEntry["Name"], $currEntry["SubmissionDate"], $currEntry["Message"]);
                     }
                 ?>
             </div>
@@ -48,9 +48,21 @@
 </html>
 
 <?php
-    function generateGuestbookEntryDisplay($name, $message) {
-        return "<div class='card'>
-                    <h1>{$name} replied x days ago</h1>
+    function generateGuestbookEntryDisplay($name, $submissionDate, $message) {
+        // Convert the string to a DateTime object
+        $yourDate = new DateTime($submissionDate);
+
+        // Get the current date and time
+        $currentDate = new DateTime();
+
+        // Calculate the difference between the two dates
+        $difference = $currentDate->diff($yourDate);
+
+        // Extract the number of days from the difference
+        $daysAgo = $difference->days;
+
+        return "<div class='card col-12 mx-md-1 mb-3 p-3'>
+                    <h3>" . displayStrong($name) . "replied {$daysAgo} days ago</h3>
                     <p>{$message}</p>
                 </div>";
     }
