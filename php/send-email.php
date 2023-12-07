@@ -23,8 +23,11 @@
         // save the given name in a cookie, have it expire after 1y, and global across site
         setcookie(NAME_KEY, $name, time() + (60 * 60 * 24 * 365), "/");
 
+        // generate an authentication token for the current submission
+        $authToken = bin2hex(random_bytes(16));
+
         // attempt to send email with given data
-        $messageSent = setupAndSendEmail($name, $message);
+        $messageSent = setupAndSendEmail($name, $message, $authToken);
     }
 ?>
 
@@ -37,35 +40,43 @@
         ?>
     </head>
     <body>
-        <main class="mt-3">
-            <?php
-                // if the application was not submitted yet
-                if(!$applicationSubmitted) {
-                    // display error, and link to Guestbook application page
-                    echo generateMessageWithLink("/php/guestbook-application.php", "Guestbook Application", 
-                                                 "Please fill out the form and try again",
-                                                 "ERROR: No submission received from Guestbook Application");
-                }
+        <main class="container mt-3">
+            <div class="row">
+                <div class="col-md-2 col-lg-3">
+                </div>
+                <div class="col-md-8 col-lg-6">
+                    <?php
+                        // if the application was not submitted yet
+                        if(!$applicationSubmitted) {
+                            // display error, and link to Guestbook application page
+                            echo generateMessageWithLink("/php/guestbook-application.php", "Guestbook Application", 
+                                                        "Please fill out the form and try again",
+                                                        "ERROR: No submission received from Guestbook Application");
+                        }
 
-                // if the application was submitted & the message was sent successfully
-                elseif($applicationSubmitted && $messageSent) {
-                    // display success to user, and link to Guestbook page
-                    echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook", 
-                                                 "Your application was submitted successfully!");
+                        // if the application was submitted & the message was sent successfully
+                        elseif($applicationSubmitted && $messageSent) {
+                            // display success to user, and link to Guestbook page
+                            echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook", 
+                                                        "Your application was submitted successfully!");
+                                                        
+                            // insert given guestbook entry to DB, marked as unpublished (0) by default
+                            executeQuery("INSERT INTO GuestbookEntries (Name, Message, Token) 
+                                            VALUES ('{$name}', '{$message}', '{$authToken}')");
+                        }
 
-                    // insert given guestbook entry to DB, marked as unpublished (0)
-                    executeQuery("INSERT INTO GuestbookEntries (Name, Message, Published) 
-                                    VALUES ('{$name}', '{$message}', '0')");
-                }
-
-                // if the application was submitted & message could not be sent
-                elseif($applicationSubmitted && !$messageSent) {
-                    // display error, and link to Guestbook page
-                    echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook",
-                                                 "Please try again later", 
-                                                 "ERROR: Your application could not be submitted at this time");
-                }
-            ?>
+                        // if the application was submitted & message could not be sent
+                        elseif($applicationSubmitted && !$messageSent) {
+                            // display error, and link to Guestbook page
+                            echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook",
+                                                         "Please try again later", 
+                                                         "ERROR: Your application could not be submitted at this time");
+                        }
+                    ?>
+                </div>
+                <div class="col-md-2 col-lg-3">
+                </div>
+            </div>
         </main>
     </body>
 </html>
@@ -76,9 +87,10 @@
      * Returns whether the email was sent successfully (true/false)
      * @param string $name the name of the person leaving a Guestbook entry
      * @param string $message the message they left behind, awaiting approval
+     * @param string $authToken the authentication token used in the "approve entry" link
      * @return bool true if email was sent successfully; otherwise false
      */
-    function setupAndSendEmail($name, $message) {
+    function setupAndSendEmail($name, $message, $authToken) {
         // setup sending and receiving addresses
         $sendToAddress = "";
         $sendFromAddress = "GuestbookApplication@thezalmanian.greenriverdev.com";
@@ -89,8 +101,11 @@
         $headers .= "From: $sendFromAddress" . "\r\n";
         $subject = "Guestbook Application";
 
+        // generate email content
+        $emailContent = setupHtmlEmailContent($subject, $name, $message, $authToken);
+
         // attempt to send email with given data
-        $messageSent = mail($sendToAddress, $subject, setupHtmlEmailContent($subject, $name, $message), $headers);
+        $messageSent = mail($sendToAddress, $subject, $emailContent, $headers);
 
         // return the result of sending message (success/fail)
         return $messageSent;
@@ -101,9 +116,13 @@
      * @param string $subject the subject of the email, will be displayed at top of message content
      * @param string $name the name of the person leaving a Guestbook entry
      * @param string $message the message they left behind, awaiting approval
+     * @param string $authToken the authentication token used to generate the "approve entry" link
      * @return string HTML content for the email message
      */
-    function setupHtmlEmailContent($subject, $name, $message) {
+    function setupHtmlEmailContent($subject, $name, $message, $authToken) {
+        // setup link to approve-entry.php
+        $approvalLink = "https://thezalmanian.greenriverdev.com/php/approve-entry.php";
+        
         // setup and return HTML email content
         return "<html lang='en'>
                     <head>
@@ -113,14 +132,15 @@
                         <h3>
                             <i>{$subject}</i>
                         </h3>
+                        <h4>
+                            <strong>{$name} says:<strong>
+                        </h4>
                         <p>
                             {$message}
                         </p>
-                        <p>
-                            Sincerely,
-                            <br>
-                            {$name}
-                        </p>
+                        <a href='{$approvalLink}?token={$authToken}'>
+                            Approve Submission
+                        </a>
                     </body>
                 </html>";
     }
