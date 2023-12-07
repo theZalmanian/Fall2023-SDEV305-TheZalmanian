@@ -28,38 +28,8 @@
                 <?php
                     // if a token was given
                     if(isset($_GET["token"])) {
-                        // check DB for submission containing that token
-                        $result = executeQuery("SELECT EntryID 
-                                                FROM GuestbookEntries
-                                                WHERE Token = '{$_GET["token"]}'");
-
-                        $entry = mysqli_fetch_assoc($result);
-
-                        // if such a submission exists
-                        if(!empty($entry)) {
-                            // get the EntryID from submission
-                            $entryID = $entry["EntryID"];
-
-                            // update that submission to be published on Guestbook page
-                            // and remove that token from DB
-                            $result = executeQuery("UPDATE GuestbookEntries 
-                                                        SET Published = '1', Token = NULL 
-                                                    WHERE EntryID = {$entryID}");
-
-                            // if update was successful
-                            if($result) {
-                                $message = "Guestbook entry approved successfully";
-                            }
-
-                            // otherwise display error
-                            else {
-                                $message = "Entry could not be updated, try again later";
-                            }
-                        }
-
-                        else {
-                            $message = "Invalid token received";
-                        }
+                        // attempt to approve entry
+                        approveEntryIfMatches();
                     }
 
                     else {
@@ -75,3 +45,47 @@
         </div>
     </main>
 </body>
+
+<?php 
+    /**
+     * Checks if there is an entry in DB matching the given token
+     * If there is updates that entry to be published, otherwise displays error
+     */
+    function approveEntryIfMatches() {
+        global $message;
+
+        // check DB for entry containing that token
+        $result = executeQuery("SELECT EntryID 
+                                FROM GuestbookEntries
+                                WHERE Token = '{$_GET["token"]}'");
+
+        $entry = mysqli_fetch_assoc($result);
+
+        // if such an entry exists
+        if(!empty($entry)) {
+            // get the EntryID from entry
+            $entryID = $entry["EntryID"];
+
+            // update that entry to be published on Guestbook page
+            // and remove that token from DB
+            $result = executeQuery("UPDATE GuestbookEntries 
+                                        SET Published = '1', Token = NULL 
+                                    WHERE EntryID = {$entryID}");
+
+            // if update was successful
+            if($result) {
+                $message = "Guestbook entry approved successfully";
+            }
+
+            // otherwise display error
+            else {
+                $message = "Entry could not be updated, try again later";
+            }
+        }
+
+        // if there is no entry matching that token
+        else {
+            $message = "Invalid token received";
+        }
+    }
+?>
