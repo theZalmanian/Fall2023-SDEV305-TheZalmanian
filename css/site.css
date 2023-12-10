@@ -58,6 +58,14 @@
     --bs-list-group-border-color: var(--primary-color-variant);
 }
 
+.toast-header, .toast-body {
+    background: none;
+}
+
+#greeting-toast {
+    background-color: var(--secondary-color);
+}
+
 /******************
 ***** GENERAL *****
 ******************/

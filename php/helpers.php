@@ -144,6 +144,45 @@
                 </div>";
     }
 
+    /**
+     * Generates and returns a Bootstrap Toast greeting the user, if their name is stored in a cookie
+     * @return string a Bootstrap Toast used to greet the user
+     */
+    function generateGreetingToast() {
+        // if user's name is stored in a cookie
+        if(isset($_COOKIE[NAME_KEY])) {
+            // generate and display a greeting toast
+            return generateBootstrapToast("greeting-toast"
+                                          , "<p class='m-0'>Hello {$_COOKIE[NAME_KEY]}!</p>");
+        }
+
+        // otherwise return empty string
+        return "";
+    }
+
+    /**
+     * Generates and returns a Bootstrap Toast to be displayed containing the given HTML content
+     * @param string $content The HTML content being displayed in the Bootstrap Toast
+     * @return string a Bootstrap Toast containing the given HTML content
+     */
+    function generateBootstrapToast($toastID, $bodyContent) {
+        return "<div class='toast-container position-fixed bottom-0 end-0 p-3'>
+                    <div id='{$toastID}' class='toast' role='alert' aria-live='assertive' aria-atomic='true' data-bs-delay='25000'>
+                        <div class='toast-header'>
+                            <img class='border border-2 rounded-circle me-2' src='/images/theZalmanian.jpg' 
+                                height='30' alt='A forest with light streaming through'>
+                            <strong class='me-auto'>theZalmanian</strong>
+                            <small>just now</small>
+                            <button type='button' class='btn-close' data-bs-dismiss='toast' aria-label='Close'>
+                            </button>
+                        </div>
+                        <div class='toast-body'>
+                            {$bodyContent}
+                        </div>
+                    </div>
+                </div>";
+    }
+
     /******************
     ****** MySQL ******
     ******************/
