@@ -32,7 +32,8 @@
                     // get all guestbook entries in DB marked as published
                     $result = executeQuery("SELECT * 
                                             FROM GuestbookEntries
-                                            WHERE Published = TRUE");
+                                            WHERE Published = TRUE
+                                            ORDER BY SubmissionDate DESC");
 
                     // run through all returned entries
                     while($currEntry = mysqli_fetch_assoc($result)) {

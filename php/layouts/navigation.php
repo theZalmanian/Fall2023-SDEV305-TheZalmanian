@@ -14,7 +14,6 @@
     <nav class="navbar sticky-top navbar-expand-md border-bottom">
         <div class="container">
             <div class="d-flex justify-content-center align-items-center">
-                <img class="me-2 border" src="/images/theZalmanian.jpg" height="43" alt="A forest with light streaming through">
                 <a class="icon" href="https://github.com/thezalmanian" aria-label="GitHub">
                     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                         <path d="M 5 5 L 5 27 L 27 27 L 27 5 Z M 7 7 L 25 7 L 25 25 L 7 25 z" />
