@@ -22,20 +22,6 @@
     <main class="container">
         <div class="row">
             <div class="col-md-2 col-lg-4">
-                <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                    <div id="greeting-toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                        <div class="toast-header">
-                            <img class="border border-2 rounded-circle me-2" src="/images/theZalmanian.jpg" 
-                                height="30" alt="A forest with light streaming through">
-                            <strong class="me-auto">theZalmanian</strong>
-                            <small><?php new DateTime(); ?></small>
-                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                        <div class="toast-body">
-                            <?php echo "Hello {$_COOKIE[NAME_KEY]}"; ?>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="col-md-8 col-lg-4">
                 <div class="card text-center mb-2">
@@ -53,6 +39,8 @@
             </div>
         </div>
     </main>
+        
+    <?php echo generateGreetingToast(); ?>
 
     <!--Include greeting toast-->
     <script type="module" src="/js/initialize-bootstrap-toast.js"></script>
