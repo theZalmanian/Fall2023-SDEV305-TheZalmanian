@@ -21,7 +21,7 @@ window.addEventListener("load", function() {
     } 
     
     // if the "Theme Switcher" button exists on the page
-    if(getByID("theme-switcher") != null) {     
+    if(helpers.getByID("theme-switcher") != null) {     
         // set up its onclick to toggle between light and dark mode
         helpers.setupOnClick("theme-switcher", swapTheme);
     }
@@ -85,7 +85,7 @@ function themeIsDarkMode() {
  */
 function setThemeSwitcherIcon(svgPath) {
     // grab the icon within the "Theme Switcher" button indicating the current theme
-    const themeIcon = getByID("theme-icon");
+    const themeIcon = helpers.getByID("theme-icon");
 
     // if it exists on the page
     if(themeIcon != null) {
@@ -99,7 +99,7 @@ function setThemeSwitcherIcon(svgPath) {
  */
 function collapseMobileNav() {
     // get the navbar area
-    const navbarNav = getByID("navbar-nav");
+    const navbarNav = helpers.getByID("navbar-nav");
 
     // if a navbar exists on the page, 
     // and the page is being accessed on mobile, 
