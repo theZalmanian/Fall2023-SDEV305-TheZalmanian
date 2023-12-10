@@ -2,30 +2,30 @@ import * as helpers from './helpers.js';
 
 "use strict";
 
-// when the page loads
-window.addEventListener("load", function() {  
-    // if the theme is set to dark mode in local storage
-    if(localStorage.getItem(THEME_STORAGE_KEY) === "dark") {
-        // swap the theme to dark (light mode is default on load)
-        swapTheme();
-    } 
-    
-    // if the "Theme Switcher" button exists on the page
-    if(helpers.getByID("theme-switcher") != null) {     
-        // setup its onclick to toggle between light and dark mode
-        helpers.setupButtonOnClick("theme-switcher", swapTheme);
-    }
-})
-
 /**
- * The key used to store the current theme in local storage
+ * The key used to store the current theme in a cookie
  */
-const THEME_STORAGE_KEY = "stored-theme";
+const THEME_STORAGE_KEY = "dark-mode";
 
 /**
  * The attribute that sets a pages theme when added to the <html>
  */
 const THEME_ATTRIBUTE = "data-bs-theme";
+
+// when the page loads
+window.addEventListener("load", function() {  
+    // if the theme is saved as dark mode in a cookie
+    if(Cookies.get(THEME_STORAGE_KEY) === "active") {
+        // swap the theme to dark (light mode is default on load)
+        swapTheme();
+    } 
+    
+    // if the "Theme Switcher" button exists on the page
+    if(getByID("theme-switcher") != null) {     
+        // set up its onclick to toggle between light and dark mode
+        helpers.setupOnClick("theme-switcher", swapTheme);
+    }
+});
 
 /**
  * Swaps the page's theme between light and dark mode when the 
@@ -47,8 +47,8 @@ function swapTheme() {
         // set the theme icon to display a moon 
         setThemeSwitcherIcon(moonPath);
 
-        // save current theme to local storage
-        localStorage.setItem(THEME_STORAGE_KEY, "light");
+        // remove the cookie storing theme
+        Cookies.remove(THEME_STORAGE_KEY, { path: "/" });
     }
 
     // if the theme is light mode (not dark mode)
@@ -59,8 +59,8 @@ function swapTheme() {
         // set the theme icon to display a sun
         setThemeSwitcherIcon(sunPath);
 
-        // save current theme to local storage
-        localStorage.setItem(THEME_STORAGE_KEY, "dark");
+        // save current theme in global cookie 
+        Cookies.set(THEME_STORAGE_KEY, "active", { expires: 365, path: "/" });
     }
 
     // if on mobile, collapse nav after theme switcher clicked
@@ -85,11 +85,11 @@ function themeIsDarkMode() {
  */
 function setThemeSwitcherIcon(svgPath) {
     // grab the icon within the "Theme Switcher" button indicating the current theme
-    const themeIcon = helpers.getByID("theme-icon");
+    const themeIcon = getByID("theme-icon");
 
     // if it exists on the page
     if(themeIcon != null) {
-        // set it's path to the given path
+        // set its path to the given path
         themeIcon.setAttribute('d', svgPath);
     }
 }
@@ -99,7 +99,7 @@ function setThemeSwitcherIcon(svgPath) {
  */
 function collapseMobileNav() {
     // get the navbar area
-    const navbarNav = helpers.getByID("navbar-nav");
+    const navbarNav = getByID("navbar-nav");
 
     // if a navbar exists on the page, 
     // and the page is being accessed on mobile, 
