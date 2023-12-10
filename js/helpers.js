@@ -1,16 +1,16 @@
-export { setupButtonOnClick, getByID };
+export { setupOnClick, getByID };
 
 /**
- * Sets up an onclick event for the given button using the given function
- * @param {number} buttonID The button's id
+ * Sets up an onclick event for the given HTML element to execute the given function
+ * @param {number} elementID The element's id
  * @param useFunction The function to be called when button is clicked
  */
-function setupButtonOnClick(buttonID, useFunction) {
-    // get the button
-    const button = getByID(buttonID);
+function setupOnClick(elementID, useFunction) {
+    // get the element using it's ID
+    const element = getByID(elementID);
 
     // set it's onclick event
-    button.addEventListener("click", useFunction);
+    element.addEventListener("click", useFunction);
 }
 
 /**
