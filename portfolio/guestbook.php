@@ -28,9 +28,11 @@
                     <?php
                         // link to guestbook application page
                         echo generateMessageWithLink("/php/guestbook-application.php", "Guestbook Application",
-                                                    "Want to leave a guestbook entry? <br> Submit an application on the page linked below!");
+                                                     "Want to leave a guestbook entry? 
+                                                      <br> 
+                                                      Submit an application on the page linked below!");
                     
-                        // get all guestbook entries in DB marked as published
+                        // get all guestbook entries in DB marked as published, latest entries first
                         $result = executeQuery("SELECT * 
                                                 FROM GuestbookEntries
                                                 WHERE Published = TRUE
