@@ -30,14 +30,15 @@
                     if(isset($_GET["token"])) {
                         // attempt to approve entry
                         approveEntryIfMatches();
+
+                        // link to Guestbook page
+                        echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook", $message);
                     }
 
+                    // otherwise they shouldn't be here, link to home page
                     else {
-                        $message = "Access Denied";
+                        echo displayAccessDenied("/index.php", "Home");
                     }
-
-                    // link to Guestbook page
-                    echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook", $message);
                 ?>
             </div>
             <div class="col-md-2 col-lg-3">
