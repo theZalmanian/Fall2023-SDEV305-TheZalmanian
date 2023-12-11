@@ -50,11 +50,6 @@
             </div>
         </div>
     </main>
-        
-    <?php echo generateGreetingToast(); ?>
-
-    <!--Include greeting toast-->
-    <script type="module" src="/js/initialize-bootstrap-toast.js"></script>
 </body>
 </html>
 

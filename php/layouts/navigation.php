@@ -45,6 +45,11 @@
             </div>
         </div>
     </nav>
+
+    <?php 
+        // include and generate greeting toast on all pages with navigation
+        require_once(LAYOUTS_PATH . "/greeting-toast.php"); 
+    ?>
 </header>
 
 <?php 
