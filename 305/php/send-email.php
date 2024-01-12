@@ -49,15 +49,15 @@
                         // if the application was not submitted yet
                         if(!$applicationSubmitted) {
                             // display error, and link to Guestbook application page
-                            echo generateMessageWithLink("/php/guestbook-application.php", "Guestbook Application", 
+                            echo generateMessageWithLink("/guestbook-application.php", "Guestbook Application",
                                                         "Please fill out the form and try again",
                                                         "ERROR: No submission received from Guestbook Application");
                         }
 
                         // if the application was submitted & the message was sent successfully
-                        elseif($applicationSubmitted && $messageSent) {
+                        elseif($messageSent) {
                             // display success to user, and link to Guestbook page
-                            echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook", 
+                            echo generateMessageWithLink("../portfolio/guestbook.php", "Guestbook",
                                                         "Your application was submitted successfully!");
                                                         
                             // insert given guestbook entry to DB, marked as unpublished (0) by default
@@ -66,9 +66,9 @@
                         }
 
                         // if the application was submitted & message could not be sent
-                        elseif($applicationSubmitted && !$messageSent) {
+                        else {
                             // display error, and link to Guestbook page
-                            echo generateMessageWithLink("/portfolio/guestbook.php", "Guestbook",
+                            echo generateMessageWithLink("../portfolio/guestbook.php", "Guestbook",
                                                          "Please try again later", 
                                                          "ERROR: Your application could not be submitted at this time");
                         }

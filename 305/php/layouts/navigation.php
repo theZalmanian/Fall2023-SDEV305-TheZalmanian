@@ -3,10 +3,10 @@
      * A collection of all pages in the navigation and their corresponding links
      */
     $navigationPages = array(
-        "Home" => "../index.php",
-        "Resume" => "/portfolio/resume.php",
-        "Projects" => "/portfolio/projects.php",
-        "Guestbook" => "/portfolio/guestbook.php"
+        "Home" => "/../../index.php",
+        "Resume" => "/305/portfolio/resume.php",
+        "Projects" => "/305/portfolio/projects.php",
+        "Guestbook" => "/305/portfolio/guestbook.php"
     );
 ?>
 

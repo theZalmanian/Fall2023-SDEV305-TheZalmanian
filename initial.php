@@ -5,7 +5,8 @@
 
     // define path constants
     define("PUBLIC_HTML_PATH", dirname(__FILE__));
-    define("PHP_PATH", PUBLIC_HTML_PATH . "/php");
+    define("SDEV305_PATH", PUBLIC_HTML_PATH . "/305");
+    define("PHP_PATH", SDEV305_PATH . "/php");
     define("LAYOUTS_PATH", PHP_PATH . "/layouts");
 
     // define cookie keys
@@ -15,5 +16,5 @@
     require_once('/home/thezalma/db-connect-guestbook.php');
     
     // include all PHP helper functions
-    require_once(PHP_PATH . "/helpers.php");
+    require_once("helpers.php");
 ?>
