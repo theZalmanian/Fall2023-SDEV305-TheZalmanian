@@ -20,7 +20,7 @@
             <div class="col-md-2 col-lg-3">
             </div>
             <div class="col-md-8 col-lg-6">
-                <form class="row mx-1" id="guestbook-application" action="../php/send-email.php" method="post">
+                <form class="row mx-1" id="guestbook-application" action="send-email.php" method="post">
                     <div class="card col-12 my-1 p-2 text-center">
                         <h1>
                             Guestbook Application
