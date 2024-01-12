@@ -27,7 +27,7 @@
                 <div class="row">
                     <?php
                         // link to guestbook application page
-                        echo generateMessageWithLink("/php/guestbook-application.php", "Guestbook Application",
+                        echo generateMessageWithLink("../php/guestbook-application.php", "Guestbook Application",
                                                      "Want to leave a guestbook entry? 
                                                       <br> 
                                                       Submit an application on the page linked below!");
