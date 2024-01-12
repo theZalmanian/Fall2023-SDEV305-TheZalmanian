@@ -240,6 +240,6 @@
     </main>
     
     <!--Include dynamic accordion-->
-    <script type="module" src="/js/responsive-accordion-toggle.js"></script>
+    <script type="module" src="/305/js/responsive-accordion-toggle.js"></script>
 </body>
 </html>

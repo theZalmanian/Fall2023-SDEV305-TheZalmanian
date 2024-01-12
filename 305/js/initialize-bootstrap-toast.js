@@ -1,4 +1,4 @@
-import * as helpers from './helpers.js';
+import * as helpers from '../../js/helpers.js';
 
 "use strict";
 
@@ -13,7 +13,7 @@ window.addEventListener("load", function() {
     const userName = Cookies.get(NAME_KEY);
 
     // if a name is stored
-    if (userName != "undefined") {
+    if (userName !== "undefined") {
         // display a greeting toast
         displayBootstrapToast();
     }

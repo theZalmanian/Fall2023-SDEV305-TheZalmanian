@@ -43,6 +43,6 @@
     <?php echo generateGreetingToast(); ?>
 
     <!--Include greeting toast-->
-    <script type="module" src="/js/initialize-bootstrap-toast.js"></script>
+    <script type="module" src="/305/js/initialize-bootstrap-toast.js"></script>
 </body>
 </html>

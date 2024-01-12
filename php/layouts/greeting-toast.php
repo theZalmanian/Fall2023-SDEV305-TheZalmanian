@@ -1,7 +1,7 @@
 <?php echo generateGreetingToast(); ?>
 
 <!--Initialize greeting toast through JS-->
-<script type="module" src="/js/initialize-bootstrap-toast.js"></script>
+<script type="module" src="/305/js/initialize-bootstrap-toast.js"></script>
 
 <?php
     /**
